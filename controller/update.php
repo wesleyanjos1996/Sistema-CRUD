@@ -14,10 +14,10 @@ if (isset($_POST['btn-update'])) {
     $email = mb_strtoupper($email);
     $sql = "UPDATE clientes SET nome = '$name', sobrenome = '$last', email = '$email', nascimento = '$birth', updated_at = '$updated_at' WHERE idcliente = '$id'";
     if (mysqli_query($connect, $sql)) {
-        $_SESSION['msg'] = 'Cadastrado com sucesso!';
+        $_SESSION['msg'] = 'Atualizado com sucesso!';
         header('Location: ../view/client.php');
     } else {
-        $_SESSION['msg'] = 'Erro ao cadastrar!';
+        $_SESSION['msg'] = 'Erro ao atualizar!';
         header('Location: ../view/client.php');
     }
 }

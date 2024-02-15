@@ -1,7 +1,7 @@
 <?php
 include_once '../model/connect.php';
 include_once './includes/header.php';
-// include_once '../body/modal.php';
+include_once './includes/modal.php';
 session_start();
 ?>
     <div class="container-fluid red">
@@ -34,26 +34,18 @@ session_start();
 					    <td class="center-align"><?php echo $data['email'] ?></td>
 					    <td class="center-align"><?php echo $data['nascimento'] ?></td>
 					    <td class="center-align"><?php echo $data['created_at'] ?></td>
-					    <td class="center-align">
-                            <a href="./edit-client.php?id=<?php echo $data['idcliente'] ?>" class="btn-floating orange">
-                                <i class="material-icons">edit</i>
-                            </a>
-                        </td>
-					    <td class="center-align">
-                            <a href="#" class="btn-floating red modal-trigger">
-                                <i class="material-icons">delete</i>
-                            </a>
-                        </td>
+					    <td class="center-align"><a href="./edit-client.php?id=<?php echo $data['idcliente'] ?>" class="btn-floating orange"><i class="material-icons">edit</i></a></td>
+					    <td class="center-align"><a href="#modal<?php echo $data['idcliente'] ?>" class="btn-floating red modal-trigger"><i class="material-icons">delete</i></a></td>
                         <!-- Modal Structure -->
-                        <div id="" class="modal">
+                        <div id="modal<?php echo $data['idcliente'] ?>" class="modal">
                             <div class="modal-content">
                                 <h4>Atenção!</h4>
                                 <p>Você tem certeza que deseja excluir este cliente?</p>
                             </div>
                             <div class="modal-footer">
-                                <form action="" method="POST">
-                                    <input type="hidden" name="id" value="">
-                                    <button type="submit" name="btn-deletar" class="btn red">Sim, excluir</button>
+                                <form action="../controller/delete.php" method="POST">
+                                    <input type="hidden" name="id" value="<?php echo $data['idcliente'] ?>">
+                                    <button type="submit" name="btn-delete" class="btn red">Sim, excluir</button>
                                     <a href="#!" class="modal-close waves-effect waves-green btn-flat orange">Cancelar</a>
                                 </form>
                             </div>
