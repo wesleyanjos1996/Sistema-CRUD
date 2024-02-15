@@ -3,6 +3,9 @@ include_once '../model/connect.php';
 include_once './includes/header.php';
 include_once './includes/modal.php';
 session_start();
+if (!isset($_SESSION['log'])) {
+	header('Location: ../index.php');
+}
 ?>
     <div class="container-fluid red">
         a

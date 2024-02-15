@@ -1,6 +1,10 @@
 <?php
 include_once '../model/connect.php';
 include_once './includes/header.php';
+session_start();
+if (!isset($_SESSION['log'])) {
+	header('Location: ../index.php');
+}
 if (isset($_GET['id'])) {
 	$id = mysqli_escape_string($connect, $_GET['id']);
 	$sql = "SELECT * FROM clientes WHERE idcliente ='$id'";

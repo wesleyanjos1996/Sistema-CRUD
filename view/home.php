@@ -21,7 +21,6 @@ mysqli_close($connect);
             <h1 class="center-align">Usuário <?php echo $data['login']?></h1>
             <div class="col s12 m6 push-m3">
                 <a href="./client.php" class="btn">Consultar Cliente</a>
-                <!-- <a href="" class="btn">Consultar Funcionário</a> -->
             </div>
         </div>
         <div class="center-align">

@@ -65,33 +65,31 @@ if (isset($_POST['btn-login'])) {
                           </div>
                     </div>
                     <button type="submit" class="btn z-depth-2 waves-effect waves-teal" name="btn-login">Entrar</button>
-                    <!-- <button type="submit" class="btn-cad btn z-depth-2 waves-effect waves-teal">Cadastrar</button> -->
+                    <a href="./view/user/add-user.php" class="btn z-depth-2 waves-effect waves-teal" name="btn-cad">Cadastrar</a>
                 </form>
             </div>
         </div>
     </div>
-    <footer class="page-footer">
+    <footer class="page-footer teal darken-1">
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
-                    <h5 class="white-text">Footer Content</h5>
-                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                    <h5 class="white-text">Sistema CRUD</h5>
+                    <p class="grey-text text-lighten-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis molestiae doloribus distinctio architecto at, id nisi rem! Temporibus, vero vitae? Sequi eius est voluptatum deserunt blanditiis repellendus vitae esse pariatur.</p>
                 </div>
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Links</h5>
                     <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://github.com/wesleyanjos1996" target="_blank" title="GitHub">GitHub</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://linkedin.com/in/wesleyanjos96/" target="_blank" title="Linkdin">Linkdin</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://wesleyanjos1996.github.io/" target="_blank" title="Portfolio">Portfólio</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="footer-copyright">
             <div class="container">
-                &copy; 2024
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                <p class="center">&copy; 2024</p>
             </div>
         </div>
       </footer>

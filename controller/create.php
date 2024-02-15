@@ -14,10 +14,9 @@ if (isset($_POST['btn-create'])) {
     $sql = "INSERT INTO clientes (nome, sobrenome, email, nascimento, created_at, updated_at) VALUES ('$name', '$last', '$email', '$birth', '$created_at', '$created_at')";
 	if (mysqli_query($connect, $sql)) {
         $_SESSION['msg'] = 'Cadastrado com sucesso!';
-        header('Location: ../view/client.php');
     } else {
         $_SESSION['msg'] = 'Erro ao cadastrar!';
-        header('Location: ../view/client.php');
     }
+    header('Location: ../view/client.php');
 }
 ?>

@@ -6,10 +6,9 @@ if (isset($_POST['btn-delete'])) {
 	$sql = "DELETE FROM clientes WHERE idcliente = '$id'";
 	if (mysqli_query($connect, $sql)) {
         $_SESSION['msg'] = 'Deletado com sucesso!';
-        header('Location: ../view/client.php');
     } else {
         $_SESSION['msg'] = 'Erro ao deletar!';
-        header('Location: ../view/client.php');
     }
+    header('Location: ../view/client.php');
 }
 ?>

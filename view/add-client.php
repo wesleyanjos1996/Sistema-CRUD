@@ -1,6 +1,9 @@
 <?php
 require_once './includes/header.php';
 session_start();
+if (!isset($_SESSION['log'])) {
+	header('Location: ../index.php');
+}
 ?>
     <div class="container-fluid red">
         a
