@@ -6,6 +6,7 @@ session_start();
 if (!isset($_SESSION['log'])) {
 	header('Location: ../index.php');
 }
+$id = $_SESSION['id-user'];
 ?>
     <div class="container-fluid red">
         a
@@ -26,7 +27,7 @@ if (!isset($_SESSION['log'])) {
 			    </thead>
 			    <tbody>
                     <?php
-                        $sql = "SELECT * FROM clientes";
+                        $sql = "SELECT * FROM clientes WHERE idusuario = '$id'";
                         $result = mysqli_query($connect, $sql);
                         if (mysqli_num_rows($result) > 0) {
                             while ($data = mysqli_fetch_array($result)) {
@@ -35,8 +36,8 @@ if (!isset($_SESSION['log'])) {
 					    <td class="center-align"><?php echo $data['nome'] ?></td>
 					    <td class="center-align"><?php echo $data['sobrenome'] ?></td>
 					    <td class="center-align"><?php echo $data['email'] ?></td>
-					    <td class="center-align"><?php echo $data['nascimento'] ?></td>
-					    <td class="center-align"><?php echo $data['created_at'] ?></td>
+					    <td class="center-align"><?php echo date('d/m/Y', strtotime($data['nascimento'])) ?></td>
+					    <td class="center-align"><?php echo date('d/m/Y H:i:s', strtotime($data['created_at'])) ?></td>
 					    <td class="center-align"><a href="./edit-client.php?id=<?php echo $data['idcliente'] ?>" class="btn-floating orange"><i class="material-icons">edit</i></a></td>
 					    <td class="center-align"><a href="#modal<?php echo $data['idcliente'] ?>" class="btn-floating red modal-trigger"><i class="material-icons">delete</i></a></td>
                         <!-- Modal Structure -->
