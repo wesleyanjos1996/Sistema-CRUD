@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD</title>
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.min.css"  media="screen,projection"/>
-</head>
-<body>
+<?php
+include_once '../model/connect.php';
+include_once './includes/header.php';
+// include_once '../body/modal.php';
+session_start();
+?>
     <div class="container-fluid red">
         a
     </div>
@@ -23,17 +17,25 @@
 					    <th class="center-align">Nome:</th>
 					    <th class="center-align">Sobrenome:</th>
 					    <th class="center-align">E-mail:</th>
-					    <th class="center-align">Idade:</th>
+					    <th class="center-align">Nascimento:</th>
+					    <th class="center-align">Cadastrado em:</th>
 				    </tr>
 			    </thead>
 			    <tbody>
+                    <?php
+                        $sql = "SELECT * FROM clientes";
+                        $result = mysqli_query($connect, $sql);
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($data = mysqli_fetch_array($result)) {
+                    ?>
 				    <tr>
-					    <td class="center-align"></td>
-					    <td class="center-align"></td>
-					    <td class="center-align"></td>
-					    <td class="center-align"></td>
+					    <td class="center-align"><?php echo $data['nome'] ?></td>
+					    <td class="center-align"><?php echo $data['sobrenome'] ?></td>
+					    <td class="center-align"><?php echo $data['email'] ?></td>
+					    <td class="center-align"><?php echo $data['nascimento'] ?></td>
+					    <td class="center-align"><?php echo $data['created_at'] ?></td>
 					    <td class="center-align">
-                            <a href="#" class="btn-floating orange">
+                            <a href="./edit-client.php?id=<?php echo $data['idcliente'] ?>" class="btn-floating orange">
                                 <i class="material-icons">edit</i>
                             </a>
                         </td>
@@ -57,21 +59,28 @@
                             </div>
                         </div>
 				    </tr>
+                    <?php
+						    }
+					    } else {
+				    ?>
 				    <tr>
 					    <td class="center-align">-</td>
 					    <td class="center-align">-</td>
 					    <td class="center-align">-</td>
 					    <td class="center-align">-</td>
 				    </tr>
+                    <?php
+					    }
+                        mysqli_close($connect);
+				    ?>
 			    </tbody>
 		    </table>
 		    <div class="center-align">
-                <a href="#" class="btn ">Adicionar cliente</a>
-                <a href="#" class="btn green">Voltar</a>
+                <a href="./add-client.php" class="btn ">Adicionar cliente</a>
+                <a href="./home.php" class="btn green">Voltar</a>
             </div>
 	    </div>
     </div>
-    <!--JavaScript at end of body for optimized loading-->
-    <script type="text/javascript" src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
-</body>
-</html>
+<?php
+require_once './includes/footer.php';
+?>

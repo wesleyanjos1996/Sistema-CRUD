@@ -1,22 +1,14 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD</title>
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.min.css"  media="screen,projection"/>
-</head>
-<body>
+<?php
+require_once './includes/header.php';
+session_start();
+?>
     <div class="container-fluid red">
         a
     </div>
     <div class="row">
         <div class="col s12 m6 push-m3">
             <h3 class="light center-align">Novo Cliente</h3>
-            <form action="" method="POST">
+            <form action="../controller/create.php" method="POST">
                 <div class="input-field col s12">
                     <input type="text" name="name" id="name">
                     <label for="name">Nome</label>
@@ -33,12 +25,11 @@
                     <input type="date" name="birth" id="birth">
                     <label for="birth">Nascimento</label>
                 </div>
-                <button type="submit" name="btn-cadastrar" class="btn">Cadastrar</button>
-                <a href="cliente.php" class="btn green">Lista de Clientes</a>
+                <button type="submit" name="btn-create" class="btn">Cadastrar</button>
+                <a href="./client.php" class="btn green">Lista de Clientes</a>
             </form>
         </div>
     </div>
-    <!--JavaScript at end of body for optimized loading-->
-    <script type="text/javascript" src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
-</body>
-</html>
+<?php
+require_once './includes/footer.php';
+?>
