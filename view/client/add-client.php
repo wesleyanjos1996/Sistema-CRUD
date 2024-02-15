@@ -5,9 +5,7 @@ if (!isset($_SESSION['log'])) {
 	header('Location: ../../index.php');
 }
 ?>
-    <div class="container-fluid red">
-        a
-    </div>
+    <div class="container-fluid teal darken-1 z-depth-2 top-div"></div>
     <div class="row">
         <div class="col s12 m6 push-m3">
             <h3 class="light center-align">Novo Cliente</h3>
@@ -28,8 +26,10 @@ if (!isset($_SESSION['log'])) {
                     <input type="date" name="birth" id="birth">
                     <label for="birth">Nascimento</label>
                 </div>
-                <button type="submit" name="btn-create" class="btn">Cadastrar</button>
-                <a href="./client.php" class="btn green">Lista de Clientes</a>
+                <div class="row center">
+                    <button type="submit" name="btn-create" class="btn z-depth-2">Cadastrar</button>
+                    <a href="./client.php" class="btn z-depth-2">Lista de Clientes</a>
+                </div>
             </form>
         </div>
     </div>

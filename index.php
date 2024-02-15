@@ -38,9 +38,10 @@ if (isset($_POST['btn-login'])) {
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="./node_modules/materialize-css/dist/css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="./assets/css/custom.css" type="text/css">
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="top">
         <div class="row">
             <div class="col s12 m6 push-m3">
                 <h1 class="center-align light">Acesso</h1>
@@ -70,7 +71,7 @@ if (isset($_POST['btn-login'])) {
             </div>
         </div>
     </div>
-    <footer class="page-footer teal darken-1">
+    <footer class="page-footer teal darken-1 z-depth-2">
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">

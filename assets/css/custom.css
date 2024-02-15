@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+body {
+    height: 100vh;
+}
+
+#top {
+    height: calc(100vh - 253px);
+}
+
+.top-div {
+    height: 10vh;
+}
+
+.a-group {
+    margin: 10px;
+}
