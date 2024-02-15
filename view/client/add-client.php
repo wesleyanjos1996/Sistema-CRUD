@@ -1,8 +1,8 @@
 <?php
-require_once './includes/header.php';
+require_once '../includes/header.php';
 session_start();
 if (!isset($_SESSION['log'])) {
-	header('Location: ../index.php');
+	header('Location: ../../index.php');
 }
 ?>
     <div class="container-fluid red">
@@ -11,7 +11,7 @@ if (!isset($_SESSION['log'])) {
     <div class="row">
         <div class="col s12 m6 push-m3">
             <h3 class="light center-align">Novo Cliente</h3>
-            <form action="../controller/create.php" method="POST">
+            <form action="../../controller/Client/create.php" method="POST">
                 <div class="input-field col s12">
                     <input type="text" name="name" id="name">
                     <label for="name">Nome</label>
@@ -34,5 +34,5 @@ if (!isset($_SESSION['log'])) {
         </div>
     </div>
 <?php
-require_once './includes/footer.php';
+require_once '../includes/footer.php';
 ?>

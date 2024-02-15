@@ -1,9 +1,9 @@
 <?php
-include_once '../model/connect.php';
-include_once './includes/header.php';
+include_once '../../model/connect.php';
+include_once '../includes/header.php';
 session_start();
 if (!isset($_SESSION['log'])) {
-	header('Location: ../index.php');
+	header('Location: ../../index.php');
 }
 if (isset($_GET['id'])) {
 	$id = mysqli_escape_string($connect, $_GET['id']);
@@ -18,7 +18,7 @@ if (isset($_GET['id'])) {
     <div class="row">
         <div class="col s12 m6 push-m3">
             <h3 class="light center">Editar Cliente</h3>
-            <form action="../controller/update.php" method="POST">
+            <form action="../../controller/Client/update.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $data['idcliente'] ?>">
                 <div class="input-field col s12">
                     <input type="text" name="name" id="name" value="<?php echo $data['nome']?>">
@@ -42,5 +42,5 @@ if (isset($_GET['id'])) {
         </div>
     </div>
 <?php
-require_once './includes/footer.php';
+require_once '../includes/footer.php';
 ?>

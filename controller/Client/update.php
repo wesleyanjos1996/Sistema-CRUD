@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../model/connect.php';
+require_once '../../model/connect.php';
 if (isset($_POST['btn-update'])) {
 	$name = mysqli_escape_string($connect, $_POST['name']);
 	$last = mysqli_escape_string($connect, $_POST['last']);
@@ -18,6 +18,6 @@ if (isset($_POST['btn-update'])) {
     } else {
         $_SESSION['msg'] = 'Erro ao atualizar!';
     }
-    header('Location: ../view/client.php');
+    header('Location: ../../view/Client/client.php');
 }
 ?>

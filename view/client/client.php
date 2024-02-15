@@ -1,10 +1,10 @@
 <?php
-include_once '../model/connect.php';
-include_once './includes/header.php';
-include_once './includes/modal.php';
+include_once '../../model/connect.php';
+include_once '../includes/header.php';
+include_once '../includes/modal.php';
 session_start();
 if (!isset($_SESSION['log'])) {
-	header('Location: ../index.php');
+	header('Location: ../../index.php');
 }
 $id = $_SESSION['id-user'];
 ?>
@@ -47,7 +47,7 @@ $id = $_SESSION['id-user'];
                                 <p>Você tem certeza que deseja excluir este cliente?</p>
                             </div>
                             <div class="modal-footer">
-                                <form action="../controller/delete.php" method="POST">
+                                <form action="../../controller/Client/delete.php" method="POST">
                                     <input type="hidden" name="id" value="<?php echo $data['idcliente'] ?>">
                                     <button type="submit" name="btn-delete" class="btn red">Sim, excluir</button>
                                     <a href="#!" class="modal-close waves-effect waves-green btn-flat orange">Cancelar</a>
@@ -73,10 +73,10 @@ $id = $_SESSION['id-user'];
 		    </table>
 		    <div class="center-align">
                 <a href="./add-client.php" class="btn ">Adicionar cliente</a>
-                <a href="./home.php" class="btn green">Voltar</a>
+                <a href="../home.php" class="btn green">Voltar</a>
             </div>
 	    </div>
     </div>
 <?php
-require_once './includes/footer.php';
+require_once '../includes/footer.php';
 ?>

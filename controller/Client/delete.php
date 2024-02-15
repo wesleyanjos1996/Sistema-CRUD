@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../model/connect.php';
+require_once '../../model/connect.php';
 if (isset($_POST['btn-delete'])) {
 	$id = mysqli_escape_string($connect, $_POST['id']);
 	$sql = "DELETE FROM clientes WHERE idcliente = '$id'";
@@ -9,6 +9,6 @@ if (isset($_POST['btn-delete'])) {
     } else {
         $_SESSION['msg'] = 'Erro ao deletar!';
     }
-    header('Location: ../view/client.php');
+    header('Location: ../../view/Client/client.php');
 }
 ?>

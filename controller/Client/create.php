@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../model/connect.php';
+require_once '../../model/connect.php';
 $id = $_SESSION['id-user'];
 if (isset($_POST['btn-create'])) {
     $name = mysqli_escape_string($connect, $_POST['name']);
@@ -18,6 +18,6 @@ if (isset($_POST['btn-create'])) {
     } else {
         $_SESSION['msg'] = 'Erro ao cadastrar!';
     }
-    header('Location: ../view/client.php');
+    header('Location: ../../view/client/client.php');
 }
 ?>

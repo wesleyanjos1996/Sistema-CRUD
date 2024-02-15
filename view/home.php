@@ -20,7 +20,7 @@ mysqli_close($connect);
         <div class="row center-align">
             <h1 class="center-align">Usuário <?php echo $data['login']?></h1>
             <div class="col s12 m6 push-m3">
-                <a href="./client.php" class="btn">Consultar Cliente</a>
+                <a href="./client/client.php" class="btn">Consultar Cliente</a>
             </div>
         </div>
         <div class="center-align">
